@@ -1,47 +1,66 @@
 .navigationBar {
-  background-color: black;
-  position: absolute;
   top: 4%;
   left: 50%;
   width: 100%;
   height: 3em;
   transform: translate(-50%, -50%);
-  opacity: 0.7;
   padding: 1em;
   position: fixed;
-  text-align: center;
+  background-color: black;
+}
+
+@keyframes colorchange {
+  0% {
+    background: black;
+  }
+  20% {
+    background: #00223e;
+  }
+  50% {
+    background: #2b0702;
+  }
+  75% {
+    background: #00223e;
+  }
+  100% {
+    background: black;
+  }
 }
 
 a {
   text-decoration: none;
   color: white;
-  font-size: 1.4vw;
-}
-a:hover {
-  text-decoration: underline overline;
-  text-decoration-style: solid 2px;
-  text-decoration-color: indianred;
+  font-size: 1.4rem;
 }
 
-.linkWithText {
-  margin: 0;
-  position: relative;
-  top: -0.8em;
-  margin-left: 15px;
-  margin-right: 15px;
+a:hover {
+  text-decoration: underline;
+  text-decoration-style: solid 4px;
+  text-decoration-color: #995304;
 }
+
+/*Style for close/open icons*/
+.fa-times,
+.fa-bars {
+  color: white;
+  padding-left: 80%;
+  padding-top: 0.2em;
+  font-size: 40px;
+  position: absolute;
+  width: 100%;
+}
+
 .headerIcon {
   width: 50px;
-  padding: 0.2em;
+  padding: 0 0.4em 0.3em;
 }
 
 .headerPicture {
   width: 100%;
-  position: relative;
-  background-color: blue;
 }
 
 .headerQuote {
+  animation: 10000ms ease-in-out infinite colorchange;
   text-align: center;
   position: absolute;
   top: 40%;
@@ -49,7 +68,7 @@ a:hover {
   transform: translate(-50%, -50%);
   color: white;
   background-color: black;
-  opacity: 0.6;
+  opacity: 0.7;
   height: 20%;
   max-width: 600px;
   font-family: "Italiana", serif;
@@ -61,6 +80,22 @@ a:hover {
   border-width: 2px;
 }
 
+li {
+  list-style: none;
+  position: right;
+  padding: 2em;
+  transition: 0.3s;
+}
+
+.linkDiv {
+  height: 100vh;
+  min-height: 100%;
+  width: 14rem;
+  background: linear-gradient(to top, #ffa17f, #00223e);
+  box-shadow: 0 19px 38px rgba(0, 0, 0, 0.3), 0 15px 12px rgba(0, 0, 0, 0.22);
+  transition: 0.5s;
+}
+
 @media only screen and (max-width: 1100px) {
   .headerQuote {
     height: auto;
@@ -68,6 +103,11 @@ a:hover {
     font-size: 2em;
     padding: 1em;
     top: 30%;
+  }
+
+  .fa-times,
+  .fa-bars {
+    padding-left: 70%;
   }
 }
 
@@ -79,5 +119,24 @@ a:hover {
     padding: 1em;
     top: 15%;
     left: 30%;
+  }
+  .fa-times,
+  .fa-bars {
+    padding-left: 60%;
+    font-size: 30px;
+  }
+
+  .navigationBar {
+    top: 3%;
+    height: 2.3em;
+  }
+
+  .headerIcon {
+    width: 40px;
+    padding: 0 0.4em 0.3em;
+  }
+
+  .headerPicture {
+    padding-top: 2em;
   }
 }
